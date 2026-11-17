@@ -2,17 +2,17 @@
 
 namespace JeffersonGoncalves\Filament\LgpdVendors;
 
+use JeffersonGoncalves\FilamentPluginCore\BasePackageServiceProvider;
 use Spatie\LaravelPackageTools\Package;
-use Spatie\LaravelPackageTools\PackageServiceProvider;
 
-class LgpdVendorsServiceProvider extends PackageServiceProvider
+class LgpdVendorsServiceProvider extends BasePackageServiceProvider
 {
+    public static string $name = 'filament-lgpd-vendors';
+
     public function configurePackage(Package $package): void
     {
         $package
-            ->name('filament-lgpd-vendors')
-            ->hasConfigFile()
-            ->hasViews()
-            ->hasMigrations();
+            ->name(static::$name)
+            ->hasTranslations();
     }
 }
